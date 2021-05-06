@@ -1,0 +1,98 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//Ni ko tarok nama sama NIM ko
+//Muhammad Raihan Maulana 21120120120027
+//Ni awk buat dari awal e mpek akhir
+int main() {
+    int qty_shampoo, qty_sabun, qty_snack, qty_parfum, qty_coklat, qty_kacang, qty_permen; // deklarasi variable per 1 barang
+    int ttl_shampoo, ttl_sabun, ttl_snack, ttl_parfum, ttl_coklat, ttl_kacang, ttl_permen; // deklarasi variable untuk total per item
+    int grand_total,qty_bayar, qty_kembali; // deklarasiin untuk total sama yg kita bayar dan kembalian juga
+    int hrg_shampoo, hrg_sabun, hrg_snack, hrg_parfum, hrg_coklat, hrg_kacang, hrg_permen; //Ni list barang, terserah mau diubah apa
+
+    printf("  ==========================================\n");
+    printf("  == SELAMAT DATANG DI SWALAYAN PANIK GA? == \n");
+    printf("  ==========================================\n");
+
+    printf("  Masukkan Belanjaan Anda\n");
+
+    printf("  Shampoo\t: ");
+    scanf("%d", &qty_shampoo);
+
+    printf("  Sabun \t: ");
+    scanf("%d", &qty_sabun);
+
+    printf("  Snack \t: ");
+    scanf("%d", &qty_snack);
+
+    printf("  Parfum \t: ");
+    scanf("%d", &qty_parfum);
+
+    printf("  Coklat \t: ");
+    scanf("%d", &qty_coklat);
+
+    printf("  Kacang \t: ");
+    scanf("%d", &qty_kacang);
+
+    printf("  Permen \t: ");
+    scanf("%d", &qty_permen);
+    
+    hrg_shampoo = 10000;
+    hrg_sabun = 7000;
+    hrg_snack = 5000;
+    hrg_parfum = 15000;
+    hrg_coklat = 12000;
+    hrg_kacang = 9000;
+    hrg_permen = 2000;
+
+    ttl_shampoo = 10000 * qty_shampoo;
+    ttl_sabun = 7000 * qty_sabun;
+    ttl_snack = 5000 * qty_snack;
+    ttl_parfum = 15000 * qty_parfum;
+    ttl_coklat = 12000 * qty_coklat;
+    ttl_kacang = 9000 * qty_kacang;
+    ttl_permen = 2000 * qty_permen;
+    grand_total = ttl_shampoo + ttl_sabun + ttl_snack + ttl_parfum + ttl_coklat + ttl_kacang + ttl_permen;
+	
+    printf("\n  Total Belanjaan : %d\n", grand_total);
+    printf("  Masukkan Jumlah Uang Pembayaran (RP.)\t: ");
+    scanf("%d", &qty_bayar);
+    qty_kembali = qty_bayar - grand_total; 
+
+    if (qty_bayar >= grand_total) {
+        printf("\n");
+        printf("\n");
+        printf("  --------------------------------------\n");
+        printf("            SWALAYAN PANIK GA?           \n");
+        printf("  JL. T. NYAK ARIEF - KOPELMA DARUSSALAM\n");
+        printf("  --------------------------------------\n");
+        time_t rawtime;
+  		struct tm * timeinfo;
+  		time ( &rawtime );
+  		timeinfo = localtime ( &rawtime );
+  		printf ( "        %s", asctime (timeinfo) );
+  		printf("  --------------------------------------\n");
+        printf("  Nama barang  Jmlh     Harga    Total\n");
+        printf("  Shampoo\t %d\t%d\t %d\n", qty_shampoo, hrg_shampoo, ttl_shampoo);
+        printf("  Sabun \t %d\t%d\t %d\n", qty_sabun, hrg_shampoo, ttl_sabun);
+        printf("  Snack \t %d\t%d\t %d\n", qty_snack, hrg_shampoo, ttl_snack);
+        printf("  Parfum\t %d\t%d\t %d\n", qty_parfum, hrg_shampoo, ttl_parfum);
+        printf("  Coklat\t %d\t%d\t %d\n", qty_coklat, hrg_shampoo, ttl_coklat);
+        printf("  Kacang\t %d\t%d\t %d\n", qty_kacang, hrg_shampoo, ttl_kacang);
+        printf("  Permen\t %d\t%d\t %d\n", qty_permen, hrg_shampoo, ttl_permen);
+        printf("  --------------------------------------\n");
+		printf("  Total Harga \t : %d\n", grand_total);	
+		printf("  Total \t : %d\n", grand_total);
+		printf("  Tunai \t : %d\n", qty_bayar);
+		printf("  Kembali\t : %d\n", qty_kembali);
+        printf("\t      TERIMA KASIH\n");
+        printf("\t    ATAS KUNJUNGANNYA\n");
+        printf("     Layanan Konsumen (Tarok nomor ko)\n");
+        printf("  --------------------------------------");
+    }
+    else {
+        printf("Uang Anda Tidak Cukup");
+    }
+    return 0;
+}
